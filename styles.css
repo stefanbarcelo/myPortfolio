@@ -1,0 +1,572 @@
+html {
+  background: #ffd300;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+@font-face {
+  src: url(assets/fonts/Amador.ttf);
+  font-family: amador;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.button {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border: solid 1px #000;
+  border-radius: 50px;
+  background-color: rgba(0,0,0,1);
+  
+  padding: 15px 45px;
+  margin: 100px 0;
+  
+  transition-duration: 200ms;
+} 
+
+.button:hover {
+  background-color: rgba(0,0,0,0);
+  color: #000;
+  transition-duration: 200ms; 
+} 
+
+h1 {
+  font-size: 100px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+  @media only screen and (max-width: 1110px) {
+      h1 {
+        font-size: 80px;
+        margin: 0;
+        line-height: 100px;
+      } 
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+  font-family: amador;
+  font-weight: 400;
+  font-size: 60px;
+}
+
+    @media only screen and (max-width: 1110px) {
+      h2 {
+        font-size: 50px;
+      } 
+}
+
+h3 {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight; 600;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: .25px;
+}
+
+article {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: .5px;
+    }
+
+/*---animations---*/
+.animatable {
+  /* initially hide animatable objects */
+  visibility: hidden;
+  /* initially pause animatable objects their animations */
+  -webkit-animation-play-state: paused;   
+  -moz-animation-play-state: paused;     
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;   
+  animation-play-state: paused; 
+}
+
+/* show objects being animated */
+.animated {
+  visibility: visible;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(20px);
+	}	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animated.fadeInUp {
+    animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+	-webkit-animation-name: fadeInUp;
+	-moz-animation-name: fadeInUp;
+	-o-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+.animated.fadeInUp.delay{
+	animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+}
+
+/*---navigation---*/
+nav {
+  background: #000;
+  display: center;
+  position: fixed;
+  width: 100%;
+  height: 57px;
+  z-index: 999;
+}
+
+.fixed {
+  display: center;
+  position: fixed;
+  width: 100%;
+}
+
+@media screen and (max-width: 740px) {
+  nav {
+  display: none;
+  }
+}
+
+  nav ul {
+    margin: 0;
+    padding: 0 20px;
+    list-style: none;
+    text-align: center;
+  }
+
+  nav li {
+    display: inline-block;
+    margin-right: 25px;
+    padding-top: 14px;
+    padding-bottom: 20px;
+    
+    position: relative;
+  }
+
+  nav svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+  nav a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 100px;
+    transition: all ease-in-out 200ms;
+  }  
+
+  nav a:before {
+    content: "";
+    display: block;
+    margin-top: 55px;
+    z-index: 1;
+    
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 200ms;
+  }
+
+  
+
+/*---nav hover---*/
+
+  nav a:hover {
+    color: rgba(255,255,255,0.6);
+    transition: all ease-in-out 200ms;
+  }
+
+  nav a:hover:before {
+    width: 0%;
+    transition: all ease-in-out 200ms;
+  }
+
+/*---active nav class---*/
+ nav a.active {
+    color: #fff;
+  } 
+
+  nav a.active:hover {
+    color: #fff;
+  }
+
+  nav a.active:hover:before {
+    color: #fff;
+    width: 100%;
+    transition: all ease-in-out 200ms;
+  }
+
+  .active:before {
+    height: 2px;
+    width: 100%;
+    background-color: #ffd300;
+    border-radius: 2px;
+  } 
+
+/*---article---*/
+#header {
+  background: url("assets/images/background.jpg") no-repeat;
+  background-size: cover;
+  height: 730px;
+  overflow: hidden;
+  }
+
+  #header h1 {
+    padding-top: 2.1em;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 440px) {
+      .button.hide {
+        display: none;
+      }
+    
+      #header {
+        height: 560px;
+      }
+    
+      #header h1 {
+        font-size: 80px;
+        padding-top: 30px;
+        line-height: 90px;
+      }
+}
+  
+
+  #header h1 a {
+    text-decoration: none;
+    color: #ffd300;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header p {
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+/*---Portfolio---*/
+.wrapper {
+      background: #ffd300;
+      display: grid; 
+      grid-template-columns: 2fr 3fr;
+      justify-items: stretch;
+      align-items: stretch;
+    }
+
+    .wrapper > div > img {
+      object-fit: cover;
+      max-height: 100%;
+      width: 100%;
+    }
+
+    .wrapper > div > div > h3 {
+      padding-bottom: 10px;
+    }
+
+    .wrapper > div > div > p {
+      padding-bottom: 20px;  
+    }
+
+    .wrapper > div:nth-child(even) {
+      padding: 4.5em 4em 6em 5em;
+    }
+
+    .box1 {
+      background: #FFD717;
+    }
+
+    .box2 {
+      background: #FFD300;
+    }
+
+    @media only screen and (max-width: 920px) {
+      .wrapper {
+        grid-template-columns: repeat(1, auto); }
+      .wrapper > div:nth-child(even) {
+      padding: 3em 2em 4em;
+      text-align: center;
+      }
+      .image {
+      height: 60vh;
+    }
+    }
+
+/*---Process---*/
+#process {
+  background: #777;
+  color: white;
+}
+
+#process > .process-info {
+  padding: 4em 4em 1em;
+}
+
+#process > .process-info > p {
+  color: #ccc;
+}
+
+#process > .process-info > h2 > a {
+  color: #ffd300;
+  text-decoration: none;
+}
+
+  .svg {
+    padding-bottom: 20px;
+  }
+
+  div.table {
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 4em 4em;
+    border-collapse: collapse;
+  }
+
+  .table > div {
+    border: 1px solid #aaa;
+    border-radius: .25em;
+    background: #777;
+    color: #fff;
+    padding: 2em;
+    }
+
+  .table > div > p {
+    padding-top: 10px;
+    color: #ccc;
+    }
+
+
+  @media only screen and (max-width: 920px) {
+    div.table {
+      grid-template-columns: repeat(1, auto);
+      padding: 0 4em 4em;
+      
+      }
+    }
+
+  @media only screen and (max-width: 440px) {
+      div.table {
+        padding: 0 2em 4em;
+        }
+      .table > div {
+        padding: 1.5em;
+      }
+      #process > .process-info {
+        padding: 4em 2em 1.5em;
+      }
+  }
+
+/*---contact---*/
+#contact {
+  background: #ffd300;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  padding: 6em 4em 4em;
+}
+
+#contact > div:nth-child(odd) {
+  padding-right: 2em
+}
+
+#contact > div:nth-child(even) {
+  border-left: 1px #000 solid;
+  padding-left: 2em
+}
+
+#contact > div > article {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+#contact > div > ul {
+  margin: 0;
+  list-style: none;
+  padding: 10px 0 0 0;
+}
+
+#contact > div > img {
+  float: left;
+  margin-top: 15px;
+  margin-right: 2em;
+  margin-bottom: 0.5em;
+  shape-outside: circle();
+}
+
+#contact > div > ul > li {
+  display: inline;
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 920px) {
+      #contact {
+        grid-template-columns: 1fr;
+        padding: 4em;
+      }
+      #contact > div:nth-child(odd) {
+        padding: 0 0 2.5em 0;
+      }
+      #contact > div:nth-child(even) {
+        border-left: none;
+        border-top: 1px #000 solid;
+        padding: 2.5em 0;
+      }
+      #contact > div > svg {
+        padding-bottom: 20px;
+      }
+}
+
+@media only screen and (max-width: 580px) {
+  #contact > div > img {
+  float: none;
+  margin-right: 2em;
+  margin-bottom: 0.5em;
+  
+  shape-outside: none;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+      #contact {
+        padding: 4em 2em 0 2em;
+      }
+}
+
+
+/*---footer---*/
+footer {
+  color: rgba(0, 0, 0, .5);
+  font-size: 12px;
+  font-weight: 500;
+  background: #ffd300;
+  padding: 4em 0;
+}
+
+.socialIcon {
+  transition: all ease-in-out 200ms;
+}
+
+.socialIcon:hover {
+  opacity: 0.2;
+  transition: all ease-in-out 200ms;
+}
+
+footer ul.menu {
+    margin: 0;
+    padding: 0 1em 0 0;
+    list-style: none;
+    text-align: center;
+}
+
+footer li {
+    display: inline-block;
+  }
+
+footer li:nth-child(odd) {
+    border-right: 1px rgba(0, 0, 0, .5) solid;
+    padding-right: 1em;
+  }
+
+footer li:nth-child(even) {
+    padding-left: 1em;
+  }
+
+@media only screen and (max-width: 440px) {
+      footer {
+        font-size: 10px;
+      }
+}
+
+
+
+
+
+
+
+
