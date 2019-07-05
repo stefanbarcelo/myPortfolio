@@ -75,7 +75,7 @@ h3 {
   letter-spacing: 2px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-weight; 600;
+  font-weight: 600;
 }
 
 p {
@@ -355,14 +355,14 @@ nav {
     }
 
     .wrapper > div:nth-child(even) {
-      padding: 4.5em 4em 6em 5em;
+      padding: 4.5em 2em 6em 5em;
     }
 
-    .box1 {
+    .lightYellow {
       background: #FFD717;
     }
 
-    .box2 {
+    .darkYellow {
       background: #FFD300;
     }
 
