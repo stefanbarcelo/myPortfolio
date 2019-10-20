@@ -20,6 +20,7 @@ body {
 }
 
 .button {
+  display: inline-block;
   color: #fff;
   font-size: 10px;
   font-weight: 600;
@@ -29,41 +30,41 @@ body {
   border: solid 1px #000;
   border-radius: 50px;
   background-color: rgba(0,0,0,1);
-  
   padding: 15px 45px;
-  margin: 100px 0;
-  
-  transition-duration: 200ms;
-} 
+  transition: all .25s ease-in-out;
+  margin-top: 5px;
+  margin-right: 5px;
+}
 
 .button:hover {
   background-color: rgba(0,0,0,0);
   color: #000;
-  transition-duration: 200ms; 
+  transition-duration: 200ms;
 } 
 
 h1 {
-  font-size: 100px;
+  font-size: 80px;
+  line-height: 88px;
   font-weight: 900;
   text-transform: uppercase;
 }
   @media only screen and (max-width: 1110px) {
       h1 {
-        font-size: 80px;
+        font-size: 60px;
         margin: 0;
-        line-height: 100px;
+        line-height: 68px;
       } 
 }
 
 h2 {
   padding: 0;
   margin: 0;
-  font-family: amador;
+  font-family: amador, sans-serif;
   font-weight: 400;
   font-size: 60px;
 }
 
-    @media only screen and (max-width: 1110px) {
+@media only screen and (max-width: 1110px) {
       h2 {
         font-size: 50px;
       } 
@@ -293,12 +294,14 @@ nav {
 #header {
   background: url("assets/images/background.jpg") no-repeat;
   background-size: cover;
-  height: 730px;
+  min-height: 80vh;
   overflow: hidden;
+  display: grid;
+  align-items: center;
   }
 
   #header h1 {
-    padding-top: 2.1em;
+    padding-top: 30px;
     margin: 0;
   }
 
@@ -313,7 +316,6 @@ nav {
     
       #header h1 {
         font-size: 80px;
-        padding-top: 30px;
         line-height: 90px;
       }
 }
@@ -340,9 +342,18 @@ nav {
       align-items: stretch;
     }
 
+    .wrapper > .image {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      overflow: hidden;
+      min-height: 400px;
+      height: auto;
+    }
+
     .wrapper > div > img {
       object-fit: cover;
-      max-height: 100%;
+      height: 100%;
       width: 100%;
     }
 
@@ -370,12 +381,9 @@ nav {
       .wrapper {
         grid-template-columns: repeat(1, auto); }
       .wrapper > div:nth-child(even) {
-      padding: 3em 2em 4em;
+      padding: 3em 20px 4em;
       text-align: center;
       }
-      .image {
-      height: 60vh;
-    }
     }
 
 /*---Process---*/
@@ -401,7 +409,7 @@ nav {
     padding-bottom: 20px;
   }
 
-  div.table {
+  .table {
     display: grid;
     grid-gap: .5em;
     grid-template-columns: 1fr 1fr;
@@ -424,22 +432,20 @@ nav {
 
 
   @media only screen and (max-width: 920px) {
-    div.table {
+    .table {
       grid-template-columns: repeat(1, auto);
-      padding: 0 4em 4em;
-      
       }
     }
 
   @media only screen and (max-width: 440px) {
-      div.table {
-        padding: 0 2em 4em;
+      .table {
+        padding: 0 1.5em 4em;
         }
       .table > div {
         padding: 1.5em;
       }
       #process > .process-info {
-        padding: 4em 2em 1.5em;
+        padding: 4em 1em 1.5em;
       }
   }
 
